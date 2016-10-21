@@ -1,0 +1,24 @@
+"/* DoOverwrite */
+Ext.Loader.syncRequire(['$componentFullName']);
+
+describe('$componentFullName', function() {
+  var $componentShortName;
+
+  beforeEach(function() {
+      $componentShortName = Ext.create('$componentFullName');
+  });
+
+  afterEach(function() {
+      $componentShortName.destroy();
+  });
+
+  describe('Basics', function() {
+        it('is defined', function() {
+            expect($componentFullName).to.not.be(undefined);
+        });
+        it('can be instantiated', function(){
+            expect($componentShortName).to.be.a($componentFullName);
+        });
+    });
+});
+"
